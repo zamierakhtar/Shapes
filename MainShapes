@@ -1,0 +1,63 @@
+package praktic.geometry.mains;
+
+import java.util.Scanner;
+import praktic.geometry.shapes1.Circle;
+import praktic.geometry.shapes2.Rectangle;
+
+public class mainshapes {
+    public static final String TextColor = "\u001B[36m";
+    public static final String ResetColor = "\u001B[0m";
+
+    public static void printGaris() {
+        System.out.println(TextColor + "=====================================" + ResetColor);
+    }
+
+    public static void main(String[] args) {
+        try (Scanner scanner = new Scanner(System.in)) {
+            printGaris();
+            System.out.println("Nama\t: Tengku Zamier Akhtar Hidayat");
+            System.out.println("NIM\t: 245150707111044");
+            printGaris();
+            
+            // Input untuk Circle
+            System.out.println("Circle");
+            printGaris();
+            System.out.print("Ketikkan ID\t: ");
+            int circleId = scanner.nextInt();
+            System.out.print("Ketikkan Radius\t: ");
+            double radius = scanner.nextDouble();
+            
+            Circle circle = new Circle();
+            circle.setId(circleId);
+            circle.setRadius(radius);
+            
+            printGaris();
+            circle.printDeskripsi();
+            printGaris();
+            
+            // Input untuk Rectangle
+            System.out.println("Rectangle");
+            printGaris();
+            System.out.print("Ketikkan ID\t: ");
+            int rectId = scanner.nextInt();
+            System.out.print("Ketikkan Panjang\t: ");
+            double panjang = scanner.nextDouble();
+            System.out.print("Ketikkan Lebar\t: ");
+            double lebar = scanner.nextDouble();
+            
+            Rectangle rectangle = new Rectangle(rectId, panjang, lebar);
+            
+            printGaris();
+            rectangle.printDeskripsi();
+            printGaris();
+        }
+    }
+
+    public static String getTextColor() {
+        return TextColor;
+    }
+
+    public static String getResetColor() {
+        return ResetColor;
+    }
+}
