@@ -1,0 +1,43 @@
+package praktic.geometry.shapes1;
+
+public class Circle {
+    private int id; // id Lingkaran
+    private double radius; // Radius Lingkaran
+    private final int pembilang = 22; //pembilang dalam perhitungan π (22/7)
+    private final int penyebut = 7; //penyebut dalam perhitungan π (22/7)
+
+    public Circle() {
+        this.id = 0;
+        this.radius = 0;
+    }
+
+    //Setter ID untuk Lingkaran
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    //Setter Radius Lingkaran
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+    
+    //Method untuk menghitung Luas Lingkaran
+    public double getLuas() {
+        return pembilang * radius * radius / penyebut;
+    }
+    
+    //Method untuk menghitung Keliling Lingkaran
+    public double getKeliling() {
+        return 2 * pembilang * radius / penyebut;
+    }
+
+    //Method untuk print deskripsi lingkaran
+    public void printDeskripsi() {
+        System.out.println("====================================");
+        System.out.println("ID       : " + id);
+        System.out.println("Radius   : " + radius);
+        System.out.println("Keliling : " + getKeliling());
+        System.out.println("Luas     : " + getLuas());
+        System.out.println("====================================");
+    }
+} 
